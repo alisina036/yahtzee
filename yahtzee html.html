@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="yahtzee test.js"></script>
-        <link rel="stylesheet" href="yahtzee test.css">
+        <script src="yahtzee js.js"></script>
+        <link rel="stylesheet" href="yahtzee css.css">
     </head>
     <body>
         <div class="gridLayout">
@@ -17,10 +17,8 @@
         <br><br>
         <div class="totaal"><p class="totaal">Total <p id="total"></p></p></div>
         <p id="yahtzee"></p>
-        <p class="totalRolls" id="counter"> Total of rolls</p>
         <p id="rollsLeft" class="rollsLeft">Rolls left: 3</p>
-        <button class="refresh" onclick="window.location.reload()">REFRESH</button>
-        
+        <button class="refresh" onclick="window.location.reload()">Switch<br>Player</button>
         <div class="player-1">
         <table>
           <tr>
@@ -84,7 +82,7 @@
         <div class="player-2">
         <table>
           <tr>
-            <th>Player 1</th>
+            <th>Player 2</th>
             <th>game 1</th>
             <th>game 2</th>
             <th>game 3</th>
@@ -93,7 +91,7 @@
           </tr>
           <tr>
             <td>one's</td>
-            <td><input type="number"></td>
+            <td><button class="scoreBoard"></button></td>
             <td><input type="number"></td>
             <td><input type="number"></td>
             <td><input type="number"></td>

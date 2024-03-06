@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <button onclick="push()" id="push">push</button>
+        <button onclick="splice()" id="splice">splice</button>
+        <button onclick="showNumbers()" id="showNumbers">show numbers</button>
+    </body>
+    <script>
+        var dice1 = 4;
+        var dice2 = 0;
+        var dice3 = 0;
+        var dice4 = 0;
+        var dice5 = 4;
+
+        const numbers = [];
+
+        function showNumbers(){
+            document.getElementById("showNumbers");
+            console.log(numbers);
+            console.log("showed Numbers");
+        }
+
+        function push() {
+            document.getElementById("push");
+            for(i = 3; i >= 0; i--){
+                if(i <= 0){
+                    numbers.push(dice1,dice2,dice3,dice4,dice5);
+                    console.log("pushed");
+                }
+            }
+        }
+        function splice(){
+            document.getElementById("splice");
+            for(j = 3; j >= 0; j--){
+                if(j <= 0){
+                    numbers.splice(dice1);
+                    numbers.splice(dice2);
+                    numbers.splice(dice3);
+                    numbers.splice(dice4);
+                    numbers.splice(dice5);
+                    console.log("spliced");
+                }
+            }
+        }
+    </script>
+</html>

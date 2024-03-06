@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="gridLayout">
+        <p id="title">Yahtzee!</p>
+        <button onclick="rollDice()" id="roll">Roll</button>
+        
+        <button onclick="holdDie(1, this)" class="dice1" class="dices"><div id="dice1">0</div></button>
+        <button onclick="holdDie(2, this)" class="dice2" class="dices"><div id="dice2">0</div></button>
+        <button onclick="holdDie(3, this)" class="dice3" class="dices"><div id="dice3">0</div></button>
+        <button onclick="holdDie(4, this)" class="dice4" class="dices"><div id="dice4">0</div></button>
+        <button onclick="holdDie(5, this)" class="dice5" class="dices"><div id="dice5">0</div></button>
+        <br><br>
+        <div class="totaal"><p class="totaal">Total <p id="total"></p></p></div>
+        <p id="yahtzee"></p>
+        <p id="rollsLeft" class="rollsLeft">Rolls left: 3</p>
+        <button class="refresh" onclick="window.location.reload()">Switch<br>Player</button>
+        <div class="player-1">
+        <table>
+          <tr>
+            <th>Player 1</th>
+            <th>game 1</th>
+            <th>game 2</th>
+            <th>game 3</th>
+            <th>game 4</th>
+            <th>game 5</th>
+          </tr>
+          <tr>
+            <td>one's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>two's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>three's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>four's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>five's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>six's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+        </table>
+        </div>
+        <div class="player-2">
+        <table>
+          <tr>
+            <th>Player 2</th>
+            <th>game 1</th>
+            <th>game 2</th>
+            <th>game 3</th>
+            <th>game 4</th>
+            <th>game 5</th>
+          </tr>
+          <tr>
+            <td>one's</td>
+            <td><button class="scoreBoard"></button></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>two's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>three's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>four's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>five's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+          <tr>
+            <td>six's</td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+            <td><input type="number"></td>
+          </tr>
+        </table>
+        </div>
+      </div>
+      <style>
+        body {
+  background-image: url(images/dice.png);
+  background-size: 100%;
+  color: white;
+}
+
+.gridLayout {
+  display: grid;
+  grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+  grid-auto-rows: 50px;
+}
+#title {
+  grid-column: 1/21;
+  grid-row: 1;
+  text-align: center;
+  font-size: 50px;
+}
+#roll {
+  grid-row: 4;
+  text-align: center;
+  grid-column: 9/13;
+  margin-left: 50px;
+  margin-right: 50px;
+  background-color: red;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: 1s;
+}
+#roll:hover {
+  transition: 1s;
+  transform: scale(1.5);
+}
+#dice1 {
+  color: white;
+  font-size: 20px;
+  grid-column: 6;
+}
+#dice2 {
+  color: white;
+  font-size: 20px;
+  grid-column: 6;
+}
+#dice3 {
+  color: white;
+  font-size: 20px;
+  grid-column: 6;
+}
+#dice4 {
+  color: white;
+  font-size: 20px;
+  grid-column: 6;
+}
+#dice5 {
+  color: white;
+  font-size: 20px;
+  grid-column: 6;
+}
+
+.dice1 {
+  grid-row: 6;
+  grid-column: 6/8;
+  margin-left: 60px;
+  margin-right: 60px;
+  transition: 1s;
+  border-radius: 5px;
+  background-color: red;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.dice1:hover {
+  transform: scale(1.5);
+  transition: 1s;
+  animation: glow 15s;
+}
+.dice2 {
+  grid-row: 6;
+  grid-column: 8/10;
+  margin-left: 60px;
+  margin-right: 60px;
+  transition: 1s;
+  border-radius: 5px;
+  background-color: red;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.dice2:hover {
+  transform: scale(1.5);
+  transition: 1s;
+}
+.dice3 {
+  grid-row: 6;
+  grid-column: 10/12;
+  margin-left: 60px;
+  margin-right: 60px;
+  transition: 1s;
+  border-radius: 5px;
+  background-color: red;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.dice3:hover {
+  transform: scale(1.5);
+  transition: 1s;
+}
+.dice4 {
+  grid-row: 6;
+  grid-column: 12/14;
+  margin-left: 60px;
+  margin-right: 60px;
+  transition: 1s;
+  border-radius: 5px;
+  background-color: red;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.dice4:hover {
+  transform: scale(1.5);
+  transition: 1s;
+}
+.dice5 {
+  grid-row: 6;
+  grid-column: 14/16;
+  margin-left: 60px;
+  margin-right: 60px;
+  transition: 1s;
+  border-radius: 5px;
+  background-color: red;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.dice5:hover {
+  transform: scale(1.5);
+  transition: 1s;
+}
+
+button {
+  color: black;
+}
+
+#remainingTurns {
+  color: white;
+}
+.totaal {
+  grid-row: 7;
+  grid-column: 6/8;
+  text-align: center;
+  font-size: 20px;
+}
+.rollsLeft {
+  grid-row: 7;
+  grid-column: 12/18;
+  text-align: center;
+  font-size: 20px;
+}
+#yahtzee {
+  grid-row: 9;
+  grid-column: 1/21;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+  width: 25%;
+  margin-left: 37.5%;
+  border-radius: 5px;
+  padding-top: 5px;
+  margin-bottom: 5px;
+  backdrop-filter: blur(10px);
+}
+input {
+  width: 85%;
+  height: 100%;
+  border-radius: 5px;
+}
+table {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+}
+.player-1 {
+  grid-row: 5/15;
+  grid-column: 16/21;
+}
+.player-2 {
+  grid-row: 5/15;
+  grid-column: 1/6;
+}
+th {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 0, 0, 0.25);
+  border-radius: 10px;
+}
+tr {
+  background: transparent;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 0, 0, 0.25);
+  border-radius: 10px;
+}
+.refresh {
+  grid-row: 8/10;
+  margin-top: 10px;
+  height: 50%;
+  grid-column: 10/12;
+  width: 100%;
+  text-align: center;
+  align-items: center;
+  background-color: red;
+  border-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  transition: 1s;
+}
+.refresh:hover {
+  transition: 1s;
+  transform: scale(1.25);
+}
+.scoreBoard {
+  width: 100%;
+  padding-top: 25%;
+  border-radius: 5px;
+}
+@media (orientation: portrait) {
+  .player-1 {
+    grid-row: 10;
+    grid-column: 1/21;
+  }
+  .player-2 {
+    grid-row: 15;
+    grid-column: 1/21;
+  }
+  .refresh {
+    grid-column: 8/14;
+  }
+  .dice1 {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+  }
+  .dice2 {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+  }
+  .dice3 {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+  }
+  .dice4 {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+  }
+  .dice5 {
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 7.5px;
+    margin-bottom: 7.5px;
+  }
+  #roll {
+    text-align: center;
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .totaal {
+    grid-row: 7;
+    grid-column: 5/7;
+    text-align: center;
+    font-size: 20px;
+  }
+  .rollsLeft {
+    grid-row: 7;
+    grid-column: 13/19;
+    text-align: center;
+    font-size: 20px;
+  }
+}
+
+      </style>
+      <script>
+        const diceThrow = [1, 2, 3, 4, 5];
+let canThrow = [true, true, true, true, true];
+
+let numbers = [1, 5, 1, 5, 1];
+
+const dices = [0, 0, 0, 0, 0, 0];
+
+class Dice {
+  constructor() {
+    this.diceThrow = 1;
+    this.canThrow = true;
+  }
+
+  roll() {
+    if (this.canThrow) {
+      this.diceThrow = Math.floor(Math.random() * 6) + 1;
+    }
+  }
+}
+
+for (let i = 0; i < dices.length; i++) {
+  dices[i] = new Dice();
+}
+
+dices.forEach((dice) => {
+  dice.roll();
+});
+
+function diceHold(dice) {
+  dices[dice].canThrow = false;
+  console.log(dices);
+}
+
+function viewDices() {
+  console.log(dices);
+}
+
+var heldDice = [false, false, false, false, false];
+
+var diceFaces = [
+  "javascript/images/dice 1.png",
+  "javascript/images/dice 2.png",
+  "javascript/images/dice 3.png",
+  "javascript/images/dice 4.png",
+  "javascript/images/dice 5.png",
+  "javascript/images/dice 6.png",
+];
+
+function rollDice() {
+  var die1 = document.getElementById("dice1");
+  var die2 = document.getElementById("dice2");
+  var die3 = document.getElementById("dice3");
+  var die4 = document.getElementById("dice4");
+  var die5 = document.getElementById("dice5");
+  var total = document.getElementById("total");
+  var yat = document.getElementById("yahtzee");
+
+  if (!heldDice[0]) die1.innerHTML = Math.floor(Math.random() * 6) + 1;
+  if (!heldDice[1]) die2.innerHTML = Math.floor(Math.random() * 6) + 1;
+  if (!heldDice[2]) die3.innerHTML = Math.floor(Math.random() * 6) + 1;
+  if (!heldDice[3]) die4.innerHTML = Math.floor(Math.random() * 6) + 1;
+  if (!heldDice[4]) die5.innerHTML = Math.floor(Math.random() * 6) + 1;
+
+  var totaal =
+    parseInt(die1.innerHTML) +
+    parseInt(die2.innerHTML) +
+    parseInt(die3.innerHTML) +
+    parseInt(die4.innerHTML) +
+    parseInt(die5.innerHTML);
+  total.innerHTML = totaal;
+
+  if (
+    die1.innerHTML == die2.innerHTML &&
+    die1.innerHTML == die3.innerHTML &&
+    die1.innerHTML == die4.innerHTML &&
+    die1.innerHTML == die5.innerHTML
+  ) {
+    yat.innerHTML = "Yahtzee!";
+  } else {
+    yat.innerHTML = "No Yahtzee";
+  }
+  if (die1 == 1) {
+    document.getElementById("dice1").src = diceFaces[0];
+  }
+  if (rollsLeft === 0) {
+    alert("No more rolls left!");
+    return;
+  }
+  // rest of the rollDice function
+
+  rollsLeft--;
+  document.getElementById("rollsLeft").innerHTML = "Rolls left: " + rollsLeft;
+
+  if (rollsLeft == 2) {
+    dicesValue.push(die1.innerHTML, die2.innerHTML, die3.innerHTML, die4.innerHTML, die5.innerHTML);
+    console.log("pushed");
+  }
+  if (rollsLeft == 2) {
+    dicesValue.splice(die1.innerHTML);
+    console.log("spliced 1");
+  }
+  if (rollsLeft == 2) {
+    dicesValue.splice(die2.innerHTML);
+    console.log("spliced 2");
+  }
+  if (rollsLeft == 2) {
+    dicesValue.splice(die3.innerHTML);
+    console.log("spliced 3");
+  }
+  if (rollsLeft == 2) {
+    dicesValue.splice(die4.innerHTML);
+    console.log("spliced 4");
+  }
+  if (rollsLeft == 2) {
+    dicesValue.splice(die5.innerHTML);
+    console.log("spliced 5");
+  }
+  if (rollsLeft == 1) {
+    dicesValue.push(die1.innerHTML, die2.innerHTML, die3.innerHTML, die4.innerHTML, die5.innerHTML);
+    console.log("pushed");
+  }
+}
+
+var rollsLeft = 3;
+
+const dicesValue = [];
+
+function holdDie(dieNum, alisina) {
+  heldDice[dieNum - 1] = !heldDice[dieNum - 1];
+
+  die1.innerHTML = diceOne;
+  die2.innerHTML = diceTwo;
+  die3.innerHTML = diceThree;
+  die4.innerHTML = diceFour;
+  die5.innerHTML = diceFive;
+}
+
+      </script>
+    </body>
+</html>
