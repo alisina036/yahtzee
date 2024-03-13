@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <title>Yahtzee</title>
     </head>
     <body>
         <div class="gridLayout">
         <p id="title">Yahtzee!</p>
         
-        <div class="imgDice1"><img id=img></div>
+        
 
         <a href="#" style="--color: red" onclick="rollDice()" id="roll"><span>Roll</span><i></i></a>
 
-        <button onclick="holdDie(1, this)" class="dice1" class="dices"><div id="dice1">0</div></button>
-        <button onclick="holdDie(2, this)" class="dice2" class="dices"><div id="dice2">0</div></button>
-        <button onclick="holdDie(3, this)" class="dice3" class="dices"><div id="dice3">0</div></button>
-        <button onclick="holdDie(4, this)" class="dice4" class="dices"><div id="dice4">0</div></button>
-        <button onclick="holdDie(5, this)" class="dice5" class="dices"><div id="dice5">0</div></button>
+        <div class="dice1"><img onclick="holdDie(1,this)" id="dice1" src="dice 1.png"></div>
+        <div class="dice2"><img onclick="holdDie(2,this)" id="dice2" src="dice 1.png"></div>
+        <div class="dice3"><img onclick="holdDie(3,this)" id="dice3" src="dice 1.png"></div>
+        <div class="dice4"><img onclick="holdDie(4,this)" id="dice4" src="dice 1.png"></div>
+        <div class="dice5"><img onclick="holdDie(5,this)" id="dice5" src="dice 1.png"></div>
+
         <br><br>
         <div class="totaal"><p class="totaal">Total <p id="total"></p></p></div>
         <p id="yahtzee"></p>
@@ -142,7 +143,18 @@
         </table>
         </div>
       </div>
+      <div class="gridLayout">
+      <div class="tiktok">
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@diysandcoffee/video/6827443935691001094" data-video-id="6827443935691001094" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@diysandcoffee" href="https://www.tiktok.com/@diysandcoffee?refer=embed">@diysandcoffee</a> Comment your favorite &#38; lmk if you have any questions about rules 🎲 👏🏼<a title="tiktokpartner" target="_blank" href="https://www.tiktok.com/tag/tiktokpartner?refer=embed">#tiktokpartner</a> <a title="learnontiktok" target="_blank" href="https://www.tiktok.com/tag/learnontiktok?refer=embed">#learnontiktok</a> <a title="yahtzee" target="_blank" href="https://www.tiktok.com/tag/yahtzee?refer=embed">#yahtzee</a> <a title="diy" target="_blank" href="https://www.tiktok.com/tag/diy?refer=embed">#diy</a> <a title="boardgames" target="_blank" href="https://www.tiktok.com/tag/boardgames?refer=embed">#boardgames</a> <a target="_blank" title="♬ original sound - diysandcoffee" href="https://www.tiktok.com/music/original-sound-6827443898143623942?refer=embed">♬ original sound - diysandcoffee</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
+      </div>
+      </div>
       <style>
+
+.tiktok{
+    grid-column: 1/21;
+    grid-row: 1
+}
+
         body {
   background-image: url(images/dice.png);
   background-size: 100%;
@@ -161,29 +173,35 @@
   font-size: 50px;
 }
 #dice1 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+  grid-column: 6/8;
+  grid-row: 6;
+  height: 100%;
+  cursor: pointer;
+  text-align: center;
 }
 #dice2 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+  grid-column: 9;
+  grid-row: 6;
+  height: 100%;
+  cursor: pointer;
 }
 #dice3 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+  grid-column: 11;
+  grid-row: 6;
+  height: 100%;
+  cursor: pointer;
 }
 #dice4 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+  grid-column: 13;
+  grid-row: 6;
+  height: 100%;
+  cursor: pointer;
 }
 #dice5 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+  grid-column: 15;
+  grid-row: 6;
+  height: 100%;
+  cursor: pointer;
 }
 
 .dice1 {
@@ -195,11 +213,12 @@
   border-radius: 5px;
   background-color: red;
   border-color: rgba(255, 255, 255, 0.5);
+  filter:drop-shadow(0px 0px 10px white);
 }
 .dice1:hover {
   transform: scale(1.5);
   transition: 1s;
-  animation: glow 15s;
+  filter:drop-shadow(0px 0px 10px red);
 }
 .dice2 {
   grid-row: 6;
@@ -210,10 +229,12 @@
   border-radius: 5px;
   background-color: red;
   border-color: rgba(255, 255, 255, 0.5);
+  filter:drop-shadow(0px 0px 10px white);
 }
 .dice2:hover {
   transform: scale(1.5);
   transition: 1s;
+  filter:drop-shadow(0px 0px 10px red);
 }
 .dice3 {
   grid-row: 6;
@@ -224,10 +245,12 @@
   border-radius: 5px;
   background-color: red;
   border-color: rgba(255, 255, 255, 0.5);
+  filter:drop-shadow(0px 0px 10px white);
 }
 .dice3:hover {
   transform: scale(1.5);
   transition: 1s;
+  filter:drop-shadow(0px 0px 10px red);
 }
 .dice4 {
   grid-row: 6;
@@ -238,10 +261,12 @@
   border-radius: 5px;
   background-color: red;
   border-color: rgba(255, 255, 255, 0.5);
+  filter:drop-shadow(0px 0px 10px white);
 }
 .dice4:hover {
   transform: scale(1.5);
   transition: 1s;
+  filter:drop-shadow(0px 0px 10px red);
 }
 .dice5 {
   grid-row: 6;
@@ -252,10 +277,12 @@
   border-radius: 5px;
   background-color: red;
   border-color: rgba(255, 255, 255, 0.5);
+  filter:drop-shadow(0px 0px 10px white);
 }
 .dice5:hover {
   transform: scale(1.5);
   transition: 1s;
+  filter:drop-shadow(0px 0px 10px red);
 }
 
 button {
@@ -302,14 +329,18 @@ table {
   color: white;
   border-radius: 10px;
   text-align: center;
+  filter:drop-shadow(10px 10px 10px red);
 }
+
 .player-1 {
   grid-row: 5/15;
-  grid-column: 16/21;
+  grid-column: 16/20;
+  filter:drop-shadow(10px 10px 10px blue);
 }
 .player-2 {
   grid-row: 5/15;
-  grid-column: 1/6;
+  grid-column: 2/6;
+  filter:drop-shadow(10px 10px 10px blue);
 }
 th {
   background: transparent;
@@ -351,9 +382,57 @@ tr {
   font-weight: bold;
 }
 
-img{
-    margin-left: 50%;
-    margin-top: -200px;
+.imgDice1{
+    grid-row: 2;
+    grid-column: 1/21;
+}
+.onesID{
+    width: 100%;
+  padding-top: 12.5%;
+  border-radius: 5px;
+  align-items: center;
+  padding-bottom: 10%;
+  font-weight: bold;
+}
+.twosID{
+    width: 100%;
+  padding-top: 12.5%;
+  border-radius: 5px;
+  align-items: center;
+  padding-bottom: 10%;
+  font-weight: bold;
+}
+.threesID{
+    width: 100%;
+  padding-top: 12.5%;
+  border-radius: 5px;
+  align-items: center;
+  padding-bottom: 10%;
+  font-weight: bold;
+}
+.foursID{
+    width: 100%;
+  padding-top: 12.5%;
+  border-radius: 5px;
+  align-items: center;
+  padding-bottom: 10%;
+  font-weight: bold;
+}
+.fivesID{
+    width: 100%;
+  padding-top: 12.5%;
+  border-radius: 5px;
+  align-items: center;
+  padding-bottom: 10%;
+  font-weight: bold;
+}
+.sixsID{
+    width: 100%;
+  padding-top: 12.5%;
+  border-radius: 5px;
+  align-items: center;
+  padding-bottom: 10%;
+  font-weight: bold;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
@@ -460,11 +539,11 @@ img{
 @media (orientation: portrait) {
   .player-1 {
     grid-row: 10;
-    grid-column: 1/21;
+    grid-column: 2/20;
   }
   .player-2 {
     grid-row: 15;
-    grid-column: 1/21;
+    grid-column: 2/20;
   }
   .refresh {
     grid-column: 8/14;
@@ -517,6 +596,10 @@ img{
         width: 25%;
         padding-left: -50px;
       }
+      .tiktok{
+    grid-column: 1/21;
+    grid-row: 6;
+}
 }
       </style>
       <script>
@@ -577,18 +660,18 @@ function rollDice() {
   var total = document.getElementById("total");
   var yat = document.getElementById("yahtzee");
 
-  if (!heldDice[0]) die1.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[1]) die2.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[2]) die3.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[3]) die4.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[4]) die5.innerHTML = Math.floor(Math.random() * 6) + 1;
+  if (!heldDice[0])  die1.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[1])  die2.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[2])  die3.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[3])  die4.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
+  if (!heldDice[4])  die5.src = `dice ${Math.floor(Math.random() * 6) + 1}.png`;
 
   var totaal =
-    parseInt(die1.innerHTML) +
-    parseInt(die2.innerHTML) +
-    parseInt(die3.innerHTML) +
-    parseInt(die4.innerHTML) +
-    parseInt(die5.innerHTML);
+    parseInt(die1.value) +
+    parseInt(die2.value) +
+    parseInt(die3.value) +
+    parseInt(die4.value) +
+    parseInt(die5.value);
   total.innerHTML = totaal;
 
   if (
@@ -614,7 +697,7 @@ function rollDice() {
   document.getElementById("rollsLeft").innerHTML = "Rolls left: " + rollsLeft;
 
   dicesValue.length = 0;
-  dicesValue.push(die1.innerHTML, die2.innerHTML, die3.innerHTML, die4.innerHTML, die5.innerHTML);
+  dicesValue.push(die1.value, die2.value, die3.value, die4.value, die5.value);
   console.log(dicesValue)
 
 /*
@@ -659,7 +742,7 @@ var onesID = document.querySelectorAll('.onesID');
 
 // de enen knopen bijwerken
 onesID.forEach(button => {
-    button.innerHTML = onesArray;
+    button.value = onesArray;
 });
 
                   
@@ -729,9 +812,8 @@ onesID.forEach(button => {
 
   die1.innerHTML = document.getElementById("diceFaces");
    
-  let img = document.getElementById("img");
+  let img = document.getElementById("imgDice1");
 img.src = "dice " + dicesValue[0] + ".png";
-document.body.appendChild(img);
 console.log("added image of " + die1.innerHTML);
 
   img.onclick = function() {
