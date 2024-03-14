@@ -1,281 +1,452 @@
-body {
-  background-image: url(images/dice.png);
-  background-size: 100%;
-  color: white;
+
+.tiktok{
+  grid-column: 1/21;
+  grid-row: 1
+}
+
+      body {
+background-image: url(images/dice.png);
+background-size: 100%;
+color: white;
 }
 
 .gridLayout {
-  display: grid;
-  grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
-  grid-auto-rows: 50px;
+display: grid;
+grid-template-columns: 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5% 5%;
+grid-auto-rows: 50px;
 }
 #title {
-  grid-column: 1/21;
-  grid-row: 1;
-  text-align: center;
-  font-size: 50px;
-}
-#roll {
-  grid-row: 4;
-  text-align: center;
-  grid-column: 9/13;
-  margin-left: 50px;
-  margin-right: 50px;
-  background-color: red;
-  border-color: rgba(255, 255, 255, 0.5);
-  color: white;
-  font-size: 20px;
-  border-radius: 5px;
-  transition: 1s;
-}
-#roll:hover {
-  transition: 1s;
-  transform: scale(1.5);
+grid-column: 1/21;
+grid-row: 1;
+text-align: center;
+font-size: 50px;
 }
 #dice1 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+grid-column: 6/8;
+grid-row: 6;
+height: 100%;
+cursor: pointer;
+text-align: center;
 }
 #dice2 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+grid-column: 9;
+grid-row: 6;
+height: 100%;
+cursor: pointer;
 }
 #dice3 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+grid-column: 11;
+grid-row: 6;
+height: 100%;
+cursor: pointer;
 }
 #dice4 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+grid-column: 13;
+grid-row: 6;
+height: 100%;
+cursor: pointer;
 }
 #dice5 {
-  color: white;
-  font-size: 20px;
-  grid-column: 6;
+grid-column: 15;
+grid-row: 6;
+height: 100%;
+cursor: pointer;
 }
 
 .dice1 {
-  grid-row: 6;
-  grid-column: 6/8;
-  margin-left: 60px;
-  margin-right: 60px;
-  transition: 1s;
-  border-radius: 5px;
-  background-color: red;
-  border-color: rgba(255, 255, 255, 0.5);
+grid-row: 6;
+grid-column: 6/8;
+margin-left: 60px;
+margin-right: 60px;
+transition: 1s;
+border-radius: 5px;
+border-color: rgba(255, 255, 255, 0.5);
+filter:drop-shadow(0px 0px 10px blue);
 }
 .dice1:hover {
-  transform: scale(1.5);
-  transition: 1s;
-  animation: glow 15s;
+transform: scale(1.5);
+transition: 1s;
+filter:drop-shadow(0px 0px 10px red);
 }
 .dice2 {
-  grid-row: 6;
-  grid-column: 8/10;
-  margin-left: 60px;
-  margin-right: 60px;
-  transition: 1s;
-  border-radius: 5px;
-  background-color: red;
-  border-color: rgba(255, 255, 255, 0.5);
+grid-row: 6;
+grid-column: 8/10;
+margin-left: 60px;
+margin-right: 60px;
+transition: 1s;
+border-radius: 5px;
+border-color: rgba(255, 255, 255, 0.5);
+filter:drop-shadow(0px 0px 10px blue);
 }
 .dice2:hover {
-  transform: scale(1.5);
-  transition: 1s;
+transform: scale(1.5);
+transition: 1s;
+filter:drop-shadow(0px 0px 10px red);
 }
 .dice3 {
-  grid-row: 6;
-  grid-column: 10/12;
-  margin-left: 60px;
-  margin-right: 60px;
-  transition: 1s;
-  border-radius: 5px;
-  background-color: red;
-  border-color: rgba(255, 255, 255, 0.5);
+grid-row: 6;
+grid-column: 10/12;
+margin-left: 60px;
+margin-right: 60px;
+transition: 1s;
+border-radius: 5px;
+border-color: rgba(255, 255, 255, 0.5);
+filter:drop-shadow(0px 0px 10px blue);
 }
 .dice3:hover {
-  transform: scale(1.5);
-  transition: 1s;
+transform: scale(1.5);
+transition: 1s;
+filter:drop-shadow(0px 0px 10px red);
 }
 .dice4 {
-  grid-row: 6;
-  grid-column: 12/14;
-  margin-left: 60px;
-  margin-right: 60px;
-  transition: 1s;
-  border-radius: 5px;
-  background-color: red;
-  border-color: rgba(255, 255, 255, 0.5);
+grid-row: 6;
+grid-column: 12/14;
+margin-left: 60px;
+margin-right: 60px;
+transition: 1s;
+border-radius: 5px;
+border-color: rgba(255, 255, 255, 0.5);
+filter:drop-shadow(0px 0px 10px blue);
 }
 .dice4:hover {
-  transform: scale(1.5);
-  transition: 1s;
+transform: scale(1.5);
+transition: 1s;
+filter:drop-shadow(0px 0px 10px red);
 }
 .dice5 {
-  grid-row: 6;
-  grid-column: 14/16;
-  margin-left: 60px;
-  margin-right: 60px;
-  transition: 1s;
-  border-radius: 5px;
-  background-color: red;
-  border-color: rgba(255, 255, 255, 0.5);
+grid-row: 6;
+grid-column: 14/16;
+margin-left: 60px;
+margin-right: 60px;
+transition: 1s;
+border-radius: 5px;
+border-color: rgba(255, 255, 255, 0.5);
+filter:drop-shadow(0px 0px 10px blue);
 }
 .dice5:hover {
-  transform: scale(1.5);
-  transition: 1s;
+transform: scale(1.5);
+transition: 1s;
+filter:drop-shadow(0px 0px 10px red);
 }
 
 button {
-  color: black;
+color: black;
 }
 
 #remainingTurns {
-  color: white;
+color: white;
+}
+.totaal {
+grid-row: 7;
+grid-column: 6/8;
+text-align: center;
+font-size: 20px;
+}
+.rollsLeft {
+grid-row: 7;
+grid-column: 12/18;
+text-align: center;
+font-size: 20px;
+}
+#yahtzee {
+grid-row: 9;
+grid-column: 1/21;
+text-align: center;
+background-color: rgba(0, 0, 0, 0);
+width: 25%;
+margin-left: 37.5%;
+border-radius: 5px;
+padding-top: 0px;
+margin-top: 20px;
+backdrop-filter: blur(10px);
+z-index: -10;
+}
+input {
+width: 85%;
+height: 100%;
+border-radius: 5px;
+}
+table {
+background: transparent;
+backdrop-filter: blur(10px);
+background-color: rgba(255, 255, 255, 0.25);
+color: white;
+border-radius: 10px;
+text-align: center;
+filter:drop-shadow(10px 10px 10px red);
+}
+
+.player-1 {
+grid-row: 5/15;
+grid-column: 16/20;
+filter:drop-shadow(10px 10px 10px blue);
+}
+.player-2 {
+grid-row: 5/15;
+grid-column: 2/6;
+filter:drop-shadow(10px 10px 10px blue);
+}
+th {
+background: transparent;
+backdrop-filter: blur(10px);
+background-color: rgba(255, 0, 0, 0.25);
+border-radius: 10px;
+}
+tr {
+background: transparent;
+backdrop-filter: blur(10px);
+background-color: rgba(255, 0, 0, 0.25);
+border-radius: 10px;
+}
+.refresh {
+grid-row: 8/10;
+margin-top: 10px;
+height: 50%;
+grid-column: 10/12;
+width: 100%;
+text-align: center;
+align-items: center;
+background-color: red;
+border-color: rgba(255, 255, 255, 0.5);
+color: white;
+font-size: 20px;
+border-radius: 5px;
+transition: 1s;
+}
+.refresh:hover {
+transition: 1s;
+transform: scale(1.25);
+}
+.scoreBoard {
+width: 100%;
+padding-top: 12.5%;
+border-radius: 5px;
+align-items: center;
+padding-bottom: 10%;
+font-weight: bold;
+}
+
+.imgDice1{
+  grid-row: 2;
+  grid-column: 1/21;
+}
+.onesID{
+  width: 100%;
+padding-top: 12.5%;
+border-radius: 5px;
+align-items: center;
+padding-bottom: 10%;
+font-weight: bold;
+}
+.twosID{
+  width: 100%;
+padding-top: 12.5%;
+border-radius: 5px;
+align-items: center;
+padding-bottom: 10%;
+font-weight: bold;
+}
+.threesID{
+  width: 100%;
+padding-top: 12.5%;
+border-radius: 5px;
+align-items: center;
+padding-bottom: 10%;
+font-weight: bold;
+}
+.foursID{
+  width: 100%;
+padding-top: 12.5%;
+border-radius: 5px;
+align-items: center;
+padding-bottom: 10%;
+font-weight: bold;
+}
+.fivesID{
+  width: 100%;
+padding-top: 12.5%;
+border-radius: 5px;
+align-items: center;
+padding-bottom: 10%;
+font-weight: bold;
+}
+.sixsID{
+  width: 100%;
+padding-top: 12.5%;
+border-radius: 5px;
+align-items: center;
+padding-bottom: 10%;
+font-weight: bold;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    .container {
+      width: 100%;
+      min-height: 100vh;
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      background: black;
+    }
+
+    a {
+      position: relative;
+      background: grey;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      letter-spacing: 0.1rem;
+      padding: 0.75rem 1.5rem;
+      transition: 0.5s;
+      grid-column: 1/21;
+      margin-left: 46%;
+      padding-right: 6%;
+      padding-left: 2%;
+      margin-top: 0px;
+      grid-row: 4;
+      width: 3%;
+    }
+
+    a:hover {
+      letter-spacing: 0.25rem;
+      background: var(--color);
+      color: var(--color);
+      box-shadow: 0 0 35px var(--color);
+      padding-left: 2%;
+    }
+
+    a::before {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      background: black;
+    }
+
+    a span {
+      position: relative;
+      z-index: 1;
+    }
+    
+    a i {
+      position: absolute;
+      inset: 0;
+      display: block;
+    }
+
+    a i::before {
+      content: "";
+      position: absolute;
+      top: -3.5px;
+      left: 80%;
+      width: 10px;
+      height: 5px;
+      border: 2px solid var(--color);
+      background: #27282c;
+      transform: translateX(-50%);
+      transition: 0.5s;
+    }
+
+    a:hover i::before {
+      left: 20%;
+      width: 20px;
+    }
+
+    a i::after {
+      content: "";
+      position: absolute;
+      bottom: -3.5px;
+      left: 20%;
+      width: 10px;
+      height: 5px;
+      border: 2px solid var(--color);
+      background: #27282c;
+      transform: translateX(-50%);
+      transition: 0.5s;
+    }
+
+    a:hover i::after {
+      left: 80%;
+      width: 20px;
+    }
+
+
+
+@media (orientation: portrait) {
+.player-1 {
+  grid-row: 10;
+  grid-column: 3/19;
+}
+.player-2 {
+  grid-row: 15;
+  grid-column: 3/19;
+}
+.refresh {
+  grid-column: 8/14;
+}
+.dice1 {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+.dice2 {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+.dice3 {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+.dice4 {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
+}
+.dice5 {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
 }
 .totaal {
   grid-row: 7;
-  grid-column: 6/8;
+  grid-column: 5/7;
   text-align: center;
   font-size: 20px;
 }
 .rollsLeft {
   grid-row: 7;
-  grid-column: 12/18;
+  grid-column: 13/19;
   text-align: center;
   font-size: 20px;
 }
-#yahtzee {
-  grid-row: 9;
+a {
+      margin-left: 35%;
+      grid-row: 4;
+      width: 25%;
+      padding-left: 5%;
+    }
+a:hover{
+  padding-left: 4.5%;
+}
+
+    .tiktok{
   grid-column: 1/21;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  width: 25%;
-  margin-left: 37.5%;
-  border-radius: 5px;
-  padding-top: 5px;
-  margin-bottom: 5px;
-  backdrop-filter: blur(10px);
+  grid-row: 6;
 }
-input {
-  width: 85%;
-  height: 100%;
-  border-radius: 5px;
-}
-table {
-  background: transparent;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.25);
-  color: white;
-  border-radius: 10px;
-  text-align: center;
-}
-.player-1 {
-  grid-row: 5/15;
-  grid-column: 16/21;
-}
-.player-2 {
-  grid-row: 5/15;
-  grid-column: 1/6;
-}
-th {
-  background: transparent;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 0, 0, 0.25);
-  border-radius: 10px;
-}
-tr {
-  background: transparent;
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 0, 0, 0.25);
-  border-radius: 10px;
-}
-.refresh {
-  grid-row: 8/10;
-  margin-top: 10px;
-  height: 50%;
-  grid-column: 10/12;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  background-color: red;
-  border-color: rgba(255, 255, 255, 0.5);
-  color: white;
-  font-size: 20px;
-  border-radius: 5px;
-  transition: 1s;
-}
-.refresh:hover {
-  transition: 1s;
-  transform: scale(1.25);
-}
-.scoreBoard {
-  width: 100%;
-  padding-top: 25%;
-  border-radius: 5px;
-}
-@media (orientation: portrait) {
-  .player-1 {
-    grid-row: 10;
-    grid-column: 1/21;
-  }
-  .player-2 {
-    grid-row: 15;
-    grid-column: 1/21;
-  }
-  .refresh {
-    grid-column: 8/14;
-  }
-  .dice1 {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 7.5px;
-    margin-bottom: 7.5px;
-  }
-  .dice2 {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 7.5px;
-    margin-bottom: 7.5px;
-  }
-  .dice3 {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 7.5px;
-    margin-bottom: 7.5px;
-  }
-  .dice4 {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 7.5px;
-    margin-bottom: 7.5px;
-  }
-  .dice5 {
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-top: 7.5px;
-    margin-bottom: 7.5px;
-  }
-  #roll {
-    text-align: center;
-    align-items: center;
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-  .totaal {
-    grid-row: 7;
-    grid-column: 5/7;
-    text-align: center;
-    font-size: 20px;
-  }
-  .rollsLeft {
-    grid-row: 7;
-    grid-column: 13/19;
-    text-align: center;
-    font-size: 20px;
-  }
 }

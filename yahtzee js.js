@@ -1,41 +1,10 @@
-const diceThrow = [1, 2, 3, 4, 5];
-let canThrow = [true, true, true, true, true];
-
-let numbers = [1, 5, 1, 5, 1];
-
 const dices = [0, 0, 0, 0, 0, 0];
 
-class Dice {
-  constructor() {
-    this.diceThrow = 1;
-    this.canThrow = true;
-  }
-
-  roll() {
-    if (this.canThrow) {
-      this.diceThrow = Math.floor(Math.random() * 6) + 1;
-    }
-  }
-}
-
-for (let i = 0; i < dices.length; i++) {
-  dices[i] = new Dice();
-}
-
-dices.forEach((dice) => {
-  dice.roll();
-});
-
-function diceHold(dice) {
-  dices[dice].canThrow = false;
-  console.log(dices);
-}
-
-function viewDices() {
-  console.log(dices);
-}
-
 var heldDice = [false, false, false, false, false];
+
+var rollsLeft = 3;
+
+const dicesValue = [die1,die2,die3,die4,die5];
 
 var diceFaces = [
   "javascript/images/dice 1.png",
@@ -47,40 +16,40 @@ var diceFaces = [
 ];
 
 function rollDice() {
-  var die1 = document.getElementById("dice1");
-  var die2 = document.getElementById("dice2");
-  var die3 = document.getElementById("dice3");
-  var die4 = document.getElementById("dice4");
-  var die5 = document.getElementById("dice5");
   var total = document.getElementById("total");
   var yat = document.getElementById("yahtzee");
 
-  if (!heldDice[0]) die1.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[1]) die2.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[2]) die3.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[3]) die4.innerHTML = Math.floor(Math.random() * 6) + 1;
-  if (!heldDice[4]) die5.innerHTML = Math.floor(Math.random() * 6) + 1;
+  if(!heldDice [0])var die1 = Math.floor(Math.random() * 6) +1;
+  if(!heldDice [1])var die2 = Math.floor(Math.random() * 6) +1;
+  if(!heldDice [2])var die3 = Math.floor(Math.random() * 6) +1;
+  if(!heldDice [3])var die4 = Math.floor(Math.random() * 6) +1;
+  if(!heldDice [4])var die5 = Math.floor(Math.random() * 6) +1;
+
+
+  document.getElementById("dice1").src = `dice ${die1}.png`;
+  document.getElementById("dice2").src = `dice ${die2}.png`;
+  document.getElementById("dice3").src = `dice ${die3}.png`;
+  document.getElementById("dice4").src = `dice ${die4}.png`;
+  document.getElementById("dice5").src = `dice ${die5}.png`;
+
 
   var totaal =
-    parseInt(die1.innerHTML) +
-    parseInt(die2.innerHTML) +
-    parseInt(die3.innerHTML) +
-    parseInt(die4.innerHTML) +
-    parseInt(die5.innerHTML);
-  total.innerHTML = totaal;
+    parseInt(die1) +
+    parseInt(die2) +
+    parseInt(die3) +
+    parseInt(die4) +
+    parseInt(die5);
+  total = totaal;
 
   if (
-    die1.innerHTML == die2.innerHTML &&
-    die1.innerHTML == die3.innerHTML &&
-    die1.innerHTML == die4.innerHTML &&
-    die1.innerHTML == die5.innerHTML
+    die1 == die2 &&
+    die1 == die3 &&
+    die1 == die4 &&
+    die1 == die5
   ) {
-    yat.innerHTML = "Yahtzee!";
+    yat = "Yahtzee!";
   } else {
-    yat.innerHTML = "No Yahtzee";
-  }
-  if (die1 == 1) {
-    document.getElementById("dice1").src = diceFaces[0];
+    yat = "No Yahtzee";
   }
   if (rollsLeft === 0) {
     alert("No more rolls left!");
@@ -91,25 +60,117 @@ function rollDice() {
   rollsLeft--;
   document.getElementById("rollsLeft").innerHTML = "Rolls left: " + rollsLeft;
 
-  if (rollsLeft == 2) {
-    dicesValue.push(die1, die2, die3, die4, die5);
-    console.log("pushed");
-  }
-  if (rollsLeft == 1) {
-    dicesValue.splice(die1);
-    dicesValue.splice(die2);
-    dicesValue.splice(die3);
-    dicesValue.splice(die4);
-    dicesValue.splice(die5);
-    console.log("spliced");
-    dicesValue.push(dice1, dice2, dice3, dice4, dice5);
-    console.log("pushed");
-  }
+  // // dicesValue.length = 0;
+  // dicesValue.push(die1.innerHTML, die2.innerHTML, die3.innerHTML, die4.innerHTML, die5.innerHTML);
+  // console.log(dicesValue)
+  
+  const dicesValue = [die1,die2,die3,die4,die5];
+  const ones = dicesValue.filter(isOne);
+console.log(ones);
+var onesArray = ones.length;
+console.log(onesArray);
+
+// Get all elements with the class name 'onesID'
+var onesID = document.querySelectorAll('.onesID');
+
+// de enen knopen bijwerken
+onesID.forEach(button => {
+    button.innerHTML = onesArray;
+});
+
+  const twos = dicesValue.filter(isTwo)
+  console.log(twos);
+
+  var twosArray = twos.length;
+  console.log(twosArray);
+
+  var twosID = document.querySelectorAll(".twosID");
+  twosID.forEach(button => {
+    button.innerHTML = twosArray;
+  });
+  
+  const threes = dicesValue.filter(isThree)
+  console.log(threes);
+  var threesArray = threes.length;
+  console.log(threesArray);
+
+  var threesID = document.querySelectorAll(".threesID");
+  threesID.forEach(button => {
+    button.innerHTML = threesArray;
+  });
+
+  const fours = dicesValue.filter(isFour)
+  console.log(fours);
+  var foursArray = fours.length;
+  console.log(threesArray);
+
+  var foursID = document.querySelectorAll(".foursID");
+  foursID.forEach(button => {
+    button.innerHTML = foursArray;
+  });
+
+  const fives = dicesValue.filter(isFive)
+  console.log(fours);
+  var fivesArray = fives.length;
+  console.log(fivesArray);
+
+  var fivesID = document.querySelectorAll(".fivesID");
+  fivesID.forEach(button => {
+    button.innerHTML = fivesArray;
+  });
+
+  const sixs = dicesValue.filter(isSix)
+  console.log(fours);
+  var sixsArray = sixs.length;
+  console.log(sixsArray);
+
+  var sixsID = document.querySelectorAll(".sixsID");
+  sixsID.forEach(button => {
+    button.innerHTML = sixsArray;
+  });
+
+  die1.innerHTML = document.getElementById("diceFaces");
+   
+  let img = document.getElementById("imgDice1");
+img.src = "dice " + dicesValue[0] + ".png";
+console.log("added image of " + die1.innerHTML);
+
+  img.onclick = function() {
+      console.log(diceFaces.value);
+            
+  };
+
 }
 
-var rollsLeft = 3;
+function isOne(value){
+    return value == 1;
+        
+}
 
-const dicesValue = [];
+function isTwo(value){
+    return value == 2;
+        
+}
+
+function isThree(value){
+    return value == 3;
+        
+}
+
+function isFour(value){
+    return value == 4;
+        
+}
+
+function isFive(value){
+    return value == 5;
+        
+}
+
+function isSix(value){
+    return value == 6;
+        
+}
 
 function holdDie(dieNum, alisina) {
   heldDice[dieNum - 1] = !heldDice[dieNum - 1];
