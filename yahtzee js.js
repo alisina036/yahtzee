@@ -6,6 +6,12 @@ var rollsLeft = 3;
 
 const dicesValue = [die1,die2,die3,die4,die5];
 
+var die1;
+var die2;
+var die3;
+var die4;
+var die5;
+
 var diceFaces = [
   "javascript/images/dice 1.png",
   "javascript/images/dice 2.png",
@@ -65,69 +71,14 @@ function rollDice() {
   // console.log(dicesValue)
   
   const dicesValue = [die1,die2,die3,die4,die5];
-  const ones = dicesValue.filter(isOne);
-console.log(ones);
-var onesArray = ones.length;
-console.log(onesArray);
-
-// Get all elements with the class name 'onesID'
-var onesID = document.querySelectorAll('.onesID');
-
-// de enen knopen bijwerken
-onesID.forEach(button => {
-    button.innerHTML = onesArray;
-});
-
-  const twos = dicesValue.filter(isTwo)
-  console.log(twos);
-
-  var twosArray = twos.length;
-  console.log(twosArray);
-
-  var twosID = document.querySelectorAll(".twosID");
-  twosID.forEach(button => {
-    button.innerHTML = twosArray;
-  });
   
-  const threes = dicesValue.filter(isThree)
-  console.log(threes);
-  var threesArray = threes.length;
-  console.log(threesArray);
+  
 
-  var threesID = document.querySelectorAll(".threesID");
-  threesID.forEach(button => {
-    button.innerHTML = threesArray;
-  });
+  
 
-  const fours = dicesValue.filter(isFour)
-  console.log(fours);
-  var foursArray = fours.length;
-  console.log(threesArray);
+  
 
-  var foursID = document.querySelectorAll(".foursID");
-  foursID.forEach(button => {
-    button.innerHTML = foursArray;
-  });
 
-  const fives = dicesValue.filter(isFive)
-  console.log(fours);
-  var fivesArray = fives.length;
-  console.log(fivesArray);
-
-  var fivesID = document.querySelectorAll(".fivesID");
-  fivesID.forEach(button => {
-    button.innerHTML = fivesArray;
-  });
-
-  const sixs = dicesValue.filter(isSix)
-  console.log(fours);
-  var sixsArray = sixs.length;
-  console.log(sixsArray);
-
-  var sixsID = document.querySelectorAll(".sixsID");
-  sixsID.forEach(button => {
-    button.innerHTML = sixsArray;
-  });
 
   die1.innerHTML = document.getElementById("diceFaces");
    
@@ -140,37 +91,109 @@ console.log("added image of " + die1.innerHTML);
             
   };
 
+  
 }
+function selectOnes(){
+  function isOne(value){
+      return value == 1;
+          
+  }
+    const ones = dicesValue.filter(isOne);
+    console.log(ones);
+    var onesArray = ones.length;
+    console.log(onesArray);
+    
+    // Get all elements with the class name 'onesID'
+    var onesID = document.querySelectorAll('.onesID');
+    
+    // de enen knopen bijwerken
+    onesID.forEach(button => {
+        button.innerHTML = onesArray;
+    });
+  }
 
-function isOne(value){
-    return value == 1;
+function selectTwos(){
+  function isTwo(value){
+      return value == 2;
         
+  }
+  const twos = dicesValue.filter(isTwo)
+  console.log(twos);
+
+  var twosArray = twos.length;
+  console.log(twosArray);
+
+  var twosID = document.querySelectorAll(".twosID");
+  twosID.forEach(button => {
+    button.innerHTML = twosArray;
+  });
 }
 
-function isTwo(value){
-    return value == 2;
-        
-}
-
-function isThree(value){
+function selectThrees(){
+  function isThree(value){
     return value == 3;
         
+  }
+  const threes = dicesValue.filter(isThree)
+  console.log(threes);
+  var threesArray = threes.length;
+  console.log(threesArray);
+
+  var threesID = document.querySelectorAll(".threesID");
+  threesID.forEach(button => {
+    button.innerHTML = threesArray;
+  });
 }
 
-function isFour(value){
-    return value == 4;
+function selectFours(){
+  function isFour(value){
+      return value == 4;
         
+  }
+  const fours = dicesValue.filter(isFour)
+  console.log(fours);
+  var foursArray = fours.length;
+  console.log(foursArray);
+
+  var foursID = document.querySelectorAll(".foursID");
+  foursID.forEach(button => {
+    button.innerHTML = foursArray;
+  });
 }
 
-function isFive(value){
-    return value == 5;
+
+function selectFives(){
+  function isFive(value){
+      return value == 5;
         
+  }
+  const fives = dicesValue.filter(isFive)
+  console.log(fives);
+  var fivesArray = fives.length;
+  console.log(fivesArray);
+
+  var fivesID = document.querySelectorAll(".fivesID");
+  fivesID.forEach(button => {
+    button.innerHTML = fivesArray;
+  });
 }
 
-function isSix(value){
-    return value == 6;
+function selectSixs(){
+  function isSix(value){
+      return value == 6;
         
+  }
+  const sixs = dicesValue.filter(isSix)
+  console.log(sixs);
+  var sixsArray = sixs.length;
+  console.log(sixsArray);
+
+  var sixsID = document.querySelectorAll(".sixsID");
+  sixsID.forEach(button => {
+    button.innerHTML = sixsArray;
+  });
 }
+
 
 function holdDie(dieNum, alisina) {
   heldDice[dieNum - 1] = !heldDice[dieNum - 1];
