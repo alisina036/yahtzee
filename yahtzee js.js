@@ -1,4 +1,4 @@
-const dices = [0, 0, 0, 0, 0, 0];
+
 
 var heldDice = [false, false, false, false, false];
 
@@ -12,19 +12,11 @@ var die3;
 var die4;
 var die5;
 
-var diceFaces = [
-  "javascript/images/dice 1.png",
-  "javascript/images/dice 2.png",
-  "javascript/images/dice 3.png",
-  "javascript/images/dice 4.png",
-  "javascript/images/dice 5.png",
-  "javascript/images/dice 6.png",
-];
-
 function rollDice() {
   var total = document.getElementById("total");
   var yat = document.getElementById("yahtzee");
 
+  if(!rollsLeft == 0){
   if(!heldDice [0])var die1 = Math.floor(Math.random() * 6) +1;
   if(!heldDice [1])var die2 = Math.floor(Math.random() * 6) +1;
   if(!heldDice [2])var die3 = Math.floor(Math.random() * 6) +1;
@@ -37,7 +29,7 @@ function rollDice() {
   document.getElementById("dice3").src = `dice ${die3}.png`;
   document.getElementById("dice4").src = `dice ${die4}.png`;
   document.getElementById("dice5").src = `dice ${die5}.png`;
-
+  }
 
   var totaal =
     parseInt(die1) +
@@ -73,23 +65,7 @@ function rollDice() {
   const dicesValue = [die1,die2,die3,die4,die5];
   
   
-
   
-
-  
-
-
-
-  die1.innerHTML = document.getElementById("diceFaces");
-   
-  let img = document.getElementById("imgDice1");
-img.src = "dice " + dicesValue[0] + ".png";
-console.log("added image of " + die1.innerHTML);
-
-  img.onclick = function() {
-      console.log(diceFaces.value);
-            
-  };
 
   
 }
