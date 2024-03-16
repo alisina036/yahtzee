@@ -21,7 +21,7 @@
         <div class="totaal"><p class="totaal">Total <p id="total"></p></p></div>
         <p id="yahtzee"></p>
         <button id="rollsLeft" class="rollsLeft">Rolls left: 3</button>
-        <button class="refresh" onclick="window.location.reload()">Switch Player</button>
+        <button class="refresh" onclick=switchPlayer()>Switch Player</button>
         <table>
           <tr>
             <th></th>
@@ -32,16 +32,16 @@
             <td>Ones</td>
             <td>
               <button
-                class="onesID"
-                onclick="selectOnes()"
                 class="scoreBoard"
+                id="onesPlayer1"
+                onclick="selectOnesPlayer1()"
               ></button>
             </td>
             <td>
               <button
-                class="onesID"
-                onclick="selectOnes()"
                 class="scoreBoard"
+                id="onesPlayer2"
+                onclick="selectOnesPlayer2()"
               ></button>
             </td>
           </tr>
@@ -49,16 +49,16 @@
             <td>Twos</td>
             <td>
               <button
-                class="twosID"
-                onclick="selectTwos()"
                 class="scoreBoard"
+                id="twosPlayer1"
+                onclick="selectTwosPlayer1()"
               ></button>
             </td>
             <td>
               <button
-                class="twosID"
-                onclick="selectTwos()"
                 class="scoreBoard"
+                id="twosPlayer2"
+                onclick="selectTwosPlayer2()"
               ></button>
             </td>
           </tr>
@@ -66,16 +66,16 @@
             <td>Threes</td>
             <td>
               <button
-                class="threesID"
-                onclick="selectThrees()"
                 class="scoreBoard"
+                id="threesPlayer1"
+                onclick="selectThreesPlayer1()"
               ></button>
             </td>
             <td>
               <button
-                class="threesID"
-                onclick="selectThrees()"
                 class="scoreBoard"
+                id="threesPlayer2"
+                onclick="selectThreesPlayer2()"
               ></button>
             </td>
           </tr>
@@ -83,16 +83,16 @@
             <td>Fours</td>
             <td>
               <button
-                class="foursID"
-                onclick="selectFours()"
                 class="scoreBoard"
+                id="foursPlayer1"
+                onclick="selectFoursPlayer1()"
               ></button>
             </td>
             <td>
               <button
-                class="foursID"
-                onclick="selectFours()"
                 class="scoreBoard"
+                id="foursPlayer2"
+                onclick="selectFoursPlayer2()"
               ></button>
             </td>
           </tr>
@@ -100,16 +100,16 @@
             <td>Fives</td>
             <td>
               <button
-                class="fivesID"
-                onclick="selectFives()"
                 class="scoreBoard"
+                id="fivesPlayer1"
+                onclick="selectFivesPlayer1()"
               ></button>
             </td>
             <td>
               <button
-                class="fivesID"
-                onclick="selectFives()"
                 class="scoreBoard"
+                id="fivesPlayer2"
+                onclick="selectFivesPlayer2()"
               ></button>
             </td>
           </tr>
@@ -117,25 +117,24 @@
             <td>Sixs</td>
             <td>
               <button
-                class="sixsID"
-                onclick="selectSixs()"
                 class="scoreBoard"
+                id="sixesPlayer1"
+                onclick="selectSixesPlayer1()"
               ></button>
             </td>
             <td>
               <button
-                class="sixsID"
-                onclick="selectSixs()"
                 class="scoreBoard"
+                id="sixesPlayer2"
+                onclick="selectSixesPlayer2()"
               ></button>
             </td>
           </tr>
         </table>
-
       </div>
       <div class="gridLayout">
-      <div class="youtube">
-        <iframe src="https://www.youtube.com/embed/aEJUl1VkP4o?si=rGyY2MtxPYS1W3qM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="margin-left: 30%;"></iframe>
-      </div>
+        <div class="youtube">
+          <iframe src="https://www.youtube.com/embed/aEJUl1VkP4o?si=rGyY2MtxPYS1W3qM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="margin-left: 30%;"></iframe>
+        </div>
       </div>
 </html>

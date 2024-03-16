@@ -218,7 +218,8 @@ td {
   grid-row: 2;
   grid-column: 1/21;
 }
-.onesID {
+
+.scoreBoard{
   width: 90%;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -233,102 +234,8 @@ td {
   border-width: 10px;
   border-color: rgba(255, 0, 0, 0.5);
 }
-.twosID {
-  width: 90%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-top: 12.5%;
-  border-radius: 5px;
-  align-items: center;
-  padding-bottom: 10%;
-  font-weight: bold;
-  border-radius: 15px;
-  transition: 1s;
-  border-style: double;
-  border-width: 10px;
-  border-color: rgba(255, 0, 0, 0.5);
-}
-.threesID {
-  width: 90%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-top: 12.5%;
-  border-radius: 5px;
-  align-items: center;
-  padding-bottom: 10%;
-  font-weight: bold;
-  border-radius: 15px;
-  transition: 1s;
-  border-style: double;
-  border-width: 10px;
-  border-color: rgba(255, 0, 0, 0.5);
-}
-.foursID {
-  width: 90%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-top: 12.5%;
-  border-radius: 5px;
-  align-items: center;
-  padding-bottom: 10%;
-  font-weight: bold;
-  border-radius: 15px;
-  transition: 1s;
-  border-style: double;
-  border-width: 10px;
-  border-color: rgba(255, 0, 0, 0.5);
-}
-.fivesID {
-  width: 90%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-top: 12.5%;
-  border-radius: 5px;
-  align-items: center;
-  padding-bottom: 10%;
-  font-weight: bold;
-  border-radius: 15px;
-  transition: 1s;
-  border-style: double;
-  border-width: 10px;
-  border-color: rgba(255, 0, 0, 0.5);
-}
-.sixsID {
-  width: 90%;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-top: 12.5%;
-  border-radius: 5px;
-  align-items: center;
-  padding-bottom: 10%;
-  font-weight: bold;
-  border-radius: 15px;
-  transition: 1s;
-  border-style: double;
-  border-width: 10px;
-  border-color: rgba(255, 0, 0, 0.5);
-}
-.onesID:hover {
-  transform: scale(1.1);
-  transition: 1s;
-}
-.twosID:hover {
-  transform: scale(1.1);
-  transition: 1s;
-}
-.threesID:hover {
-  transform: scale(1.1);
-  transition: 1s;
-}
-.foursID:hover {
-  transform: scale(1.1);
-  transition: 1s;
-}
-.fivesID:hover {
-  transform: scale(1.1);
-  transition: 1s;
-}
-.sixsID:hover {
+
+.scoreBoard:hover {
   transform: scale(1.1);
   transition: 1s;
 }

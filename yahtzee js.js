@@ -1,182 +1,115 @@
+let rollsLeft = 3;
+let heldDice = [false, false, false, false, false];
 
-
-var heldDice = [false, false, false, false, false];
-
-var rollsLeft = 3;
-
-const dicesValue = [die1,die2,die3,die4,die5];
-
-var die1;
-var die2;
-var die3;
-var die4;
-var die5;
+// Store the dice values in an array
+let diceValues = [0, 0, 0, 0, 0];
 
 function rollDice() {
-  var total = document.getElementById("total");
-  var yat = document.getElementById("yahtzee");
-
-  if(!rollsLeft == 0){
-  if(!heldDice [0])var die1 = Math.floor(Math.random() * 6) +1;
-  if(!heldDice [1])var die2 = Math.floor(Math.random() * 6) +1;
-  if(!heldDice [2])var die3 = Math.floor(Math.random() * 6) +1;
-  if(!heldDice [3])var die4 = Math.floor(Math.random() * 6) +1;
-  if(!heldDice [4])var die5 = Math.floor(Math.random() * 6) +1;
-
-
-  document.getElementById("dice1").src = `dice ${die1}.png`;
-  document.getElementById("dice2").src = `dice ${die2}.png`;
-  document.getElementById("dice3").src = `dice ${die3}.png`;
-  document.getElementById("dice4").src = `dice ${die4}.png`;
-  document.getElementById("dice5").src = `dice ${die5}.png`;
-  }
-
-  var totaal =
-    parseInt(die1) +
-    parseInt(die2) +
-    parseInt(die3) +
-    parseInt(die4) +
-    parseInt(die5);
-  total = totaal;
-
-  if (
-    die1 == die2 &&
-    die1 == die3 &&
-    die1 == die4 &&
-    die1 == die5
-  ) {
-    yat = "Yahtzee!";
-  } else {
-    yat = "No Yahtzee";
-  }
   if (rollsLeft === 0) {
-    alert("No more rolls left!");
+    alert("No more turns left!");
     return;
   }
-  // rest of the rollDice function
+
+  for (let i = 0; i < heldDice.length; i++) {
+    if (!heldDice[i]) {
+      // Roll only if the dice is not held
+      diceValues[i] = Math.floor(Math.random() * 6) + 1;
+    }
+  }
+
+  // Update the dice images
+  for (let i = 0; i < diceValues.length; i++) {
+    document.getElementById("dice" + (i + 1)).src = "dice " + diceValues[i] + ".png";
+  }
 
   rollsLeft--;
-  document.getElementById("rollsLeft").innerHTML = "Rolls left: " + rollsLeft;
+  document.getElementById("rollsLeft").textContent = "Rolls left: " + rollsLeft;
 
-  // // dicesValue.length = 0;
-  // dicesValue.push(die1.innerHTML, die2.innerHTML, die3.innerHTML, die4.innerHTML, die5.innerHTML);
-  // console.log(dicesValue)
-  
-  const dicesValue = [die1,die2,die3,die4,die5];
-  
-  
-  
-
-  
-}
-function selectOnes(){
-  function isOne(value){
-      return value == 1;
-          
-  }
-    const ones = dicesValue.filter(isOne);
-    console.log(ones);
-    var onesArray = ones.length;
-    console.log(onesArray);
-    
-    // Get all elements with the class name 'onesID'
-    var onesID = document.querySelectorAll('.onesID');
-    
-    // de enen knopen bijwerken
-    onesID.forEach(button => {
-        button.innerHTML = onesArray;
-    });
-  }
-
-function selectTwos(){
-  function isTwo(value){
-      return value == 2;
-        
-  }
-  const twos = dicesValue.filter(isTwo)
-  console.log(twos);
-
-  var twosArray = twos.length;
-  console.log(twosArray);
-
-  var twosID = document.querySelectorAll(".twosID");
-  twosID.forEach(button => {
-    button.innerHTML = twosArray;
-  });
+  // Update other functionalities based on the new dice values
+  updateScore(); // Assuming you have a function to update the score based on diceValues
 }
 
-function selectThrees(){
-  function isThree(value){
-    return value == 3;
-        
-  }
-  const threes = dicesValue.filter(isThree)
-  console.log(threes);
-  var threesArray = threes.length;
-  console.log(threesArray);
-
-  var threesID = document.querySelectorAll(".threesID");
-  threesID.forEach(button => {
-    button.innerHTML = threesArray;
-  });
-}
-
-function selectFours(){
-  function isFour(value){
-      return value == 4;
-        
-  }
-  const fours = dicesValue.filter(isFour)
-  console.log(fours);
-  var foursArray = fours.length;
-  console.log(foursArray);
-
-  var foursID = document.querySelectorAll(".foursID");
-  foursID.forEach(button => {
-    button.innerHTML = foursArray;
-  });
-}
-
-
-function selectFives(){
-  function isFive(value){
-      return value == 5;
-        
-  }
-  const fives = dicesValue.filter(isFive)
-  console.log(fives);
-  var fivesArray = fives.length;
-  console.log(fivesArray);
-
-  var fivesID = document.querySelectorAll(".fivesID");
-  fivesID.forEach(button => {
-    button.innerHTML = fivesArray;
-  });
-}
-
-function selectSixs(){
-  function isSix(value){
-      return value == 6;
-        
-  }
-  const sixs = dicesValue.filter(isSix)
-  console.log(sixs);
-  var sixsArray = sixs.length;
-  console.log(sixsArray);
-
-  var sixsID = document.querySelectorAll(".sixsID");
-  sixsID.forEach(button => {
-    button.innerHTML = sixsArray;
-  });
-}
-
-
-function holdDie(dieNum, alisina) {
+function holdDie(dieNum) {
   heldDice[dieNum - 1] = !heldDice[dieNum - 1];
+}
 
-  die1.innerHTML = diceOne;
-  die2.innerHTML = diceTwo;
-  die3.innerHTML = diceThree;
-  die4.innerHTML = diceFour;
-  die5.innerHTML = diceFive;
+// Example of updating score based on dice values
+function updateScore() {
+  let totalScore = 0;
+  for (let i = 0; i < diceValues.length; i++) {
+    totalScore += diceValues[i];
+  }
+  document.getElementById("total").textContent = "Total Score: " + totalScore;
+}
+
+// Example of filtering dice values to find ones
+function selectOnesPlayer1() {
+  let onesCountPlayer1 = diceValues.filter(value => value === 1).length;
+  console.log("Number of ones: " + onesCountPlayer1);
+  document.getElementById("onesPlayer1").textContent = onesCountPlayer1; 
+  // You can update the HTML elements to display the count of ones as needed
+}
+function selectOnesPlayer2() {
+  let onesCountPlayer2 = diceValues.filter(value => value === 1).length;
+  document.getElementById("onesPlayer2").textContent = onesCountPlayer2; 
+  console.log("Number of ones: " + onesCountPlayer2);
+}
+function selectTwosPlayer1() {
+  let twosCountPlayer1 = diceValues.filter(value => value === 2).length;
+  document.getElementById("twosPlayer1").textContent = twosCountPlayer1; 
+  console.log("Number of Twos: " + twosCountPlayer1);
+}
+function selectTwosPlayer2() {
+  let twosCountPlayer2 = diceValues.filter(value => value === 2).length;
+  document.getElementById("twosPlayer2").textContent = twosCountPlayer2; 
+  console.log("Number of Twos: " + twosCountPlayer2);
+}
+function selectThreesPlayer1() {
+  let threesCountPlayer1 = diceValues.filter(value => value === 3).length;
+  document.getElementById("threesPlayer1").textContent = threesCountPlayer1; 
+  console.log("Number of threes: " + threesCountPlayer1);
+}
+function selectThreesPlayer2() {
+  let threesCountPlayer2 = diceValues.filter(value => value === 3).length;
+  document.getElementById("threesPlayer2").textContent = threesCountPlayer2; 
+  console.log("Number of threes: " + threesCountPlayer2);
+}
+function selectFoursPlayer1() {
+  let foursCountPlayer1 = diceValues.filter(value => value === 4).length;
+  document.getElementById("foursPlayer1").textContent = foursCountPlayer1; 
+  console.log("Number of fours: " + foursCountPlayer1);
+}
+function selectFoursPlayer2() {
+  let foursCountPlayer2 = diceValues.filter(value => value === 4).length;
+  document.getElementById("foursPlayer2").textContent = foursCountPlayer2; 
+  console.log("Number of fours: " + foursCountPlayer2);
+}
+function selectFivesPlayer1() {
+  let fivesCountPlayer1 = diceValues.filter(value => value === 5).length;
+  document.getElementById("fivesPlayer1").textContent = fivesCountPlayer1;
+  console.log("Number of fives: " + fivesCountPlayer1);
+}
+function selectFivesPlayer2() {
+  let fivesCountPlayer2 = diceValues.filter(value => value === 5).length;
+  document.getElementById("fivesPlayer2").textContent = fivesCountPlayer2;
+  console.log("Number of fives: " + fivesCountPlayer2);
+}
+function selectSixesPlayer1() {
+  let sixesCountPlayer1 = diceValues.filter(value => value === 6).length;
+  document.getElementById("sixesPlayer1").textContent = sixesCountPlayer1;
+  console.log("Number of sixes: " + sixesCountPlayer1);
+}
+function selectSixesPlayer2() {
+  let sixesCountPlayer2 = diceValues.filter(value => value === 6).length;
+  document.getElementById("sixesPlayer2").textContent = sixesCountPlayer2;
+  console.log("Number of sixes: " + sixesCountPlayer2);
+}
+
+function switchPlayer(){
+  rollsLeft = 3;
+  document.getElementById("rollsLeft").textContent = "Rolls left: " + 3;
+  for (let i = 0; i < diceValues.length; i++){
+  document.getElementById("dice" + (i + 1)).src = "dice 1.png";
+  }
+  heldDice = [false, false, false, false, false];
 }
