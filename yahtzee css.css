@@ -7,8 +7,8 @@ iframe {
 }
 
 body {
-  background-image: url(images/dice.png);
-  background-size: 100%;
+  background-image: url(images/dice.jpg);
+  background-size: 25%;
   color: white;
 }
 
@@ -63,7 +63,7 @@ body {
   transition: 1s;
   border-radius: 5px;
   border-color: rgba(255, 255, 255, 0.5);
-  filter: drop-shadow(0px 0px 10px blue);
+  filter: drop-shadow(0px 0px 10px white);
 }
 .dice1:hover {
   transform: scale(1.5);
@@ -78,7 +78,7 @@ body {
   transition: 1s;
   border-radius: 5px;
   border-color: rgba(255, 255, 255, 0.5);
-  filter: drop-shadow(0px 0px 10px blue);
+  filter: drop-shadow(0px 0px 10px white);
 }
 .dice2:hover {
   transform: scale(1.5);
@@ -93,7 +93,7 @@ body {
   transition: 1s;
   border-radius: 5px;
   border-color: rgba(255, 255, 255, 0.5);
-  filter: drop-shadow(0px 0px 10px blue);
+  filter: drop-shadow(0px 0px 10px white);
 }
 .dice3:hover {
   transform: scale(1.5);
@@ -108,7 +108,7 @@ body {
   transition: 1s;
   border-radius: 5px;
   border-color: rgba(255, 255, 255, 0.5);
-  filter: drop-shadow(0px 0px 10px blue);
+  filter: drop-shadow(0px 0px 10px white);
 }
 .dice4:hover {
   transform: scale(1.5);
@@ -123,7 +123,7 @@ body {
   transition: 1s;
   border-radius: 5px;
   border-color: rgba(255, 255, 255, 0.5);
-  filter: drop-shadow(0px 0px 10px blue);
+  filter: drop-shadow(0px 0px 10px white);
 }
 .dice5:hover {
   transform: scale(1.5);
@@ -156,6 +156,7 @@ button {
   border-color: red;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 0, 0, 0.5);
+  border-style: solid;
 }
 #yahtzee {
   grid-row: 10;
@@ -178,7 +179,7 @@ input {
 table {
   background-color: rgba(255, 0, 0, 0.5);
   grid-column: 16/21;
-  grid-row: 4/11;
+  grid-row: 1/10;
   border-radius: 20px;
   color: white;
   backdrop-filter: blur(5px);
@@ -205,6 +206,7 @@ td {
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0);
   color: white;
+  border-style: solid;
   border-color: red;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 0, 0, 0.5);
@@ -221,14 +223,16 @@ td {
 
 .scoreBoard{
   width: 90%;
+  height: 60px;
   margin-top: 5px;
   margin-bottom: 5px;
-  padding-top: 12.5%;
-  border-radius: 5px;
+  border-radius: 20px;
   align-items: center;
-  padding-bottom: 10%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  padding-bottom: 5%;
   font-weight: bold;
-  border-radius: 15px;
   transition: 1s;
   border-style: double;
   border-width: 10px;
@@ -236,8 +240,9 @@ td {
 }
 
 .scoreBoard:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
   transition: 1s;
+  width: 85%;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
@@ -401,14 +406,14 @@ a:hover i::after {
 
   .youtube {
     grid-column: 1/15;
-    grid-row: 5;
+    grid-row: 14;
   }
   iframe {
-    height: 400px;
+    height: 160px;
     width: auto;
   }
   table {
     grid-column: 3/19;
-    grid-row: 10/17;
+    grid-row: 10/15;
   }
 }

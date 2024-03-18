@@ -3,6 +3,7 @@
     <head>
         <script src="yahtzee js.js"></script>
         <link rel="stylesheet" href="yahtzee css.css">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
         <title>Yahtzee</title>
     </head>
     <body>
@@ -19,7 +20,6 @@
 
         <br><br>
         <div class="totaal"><p class="totaal">Total <p id="total"></p></p></div>
-        <p id="yahtzee"></p>
         <button id="rollsLeft" class="rollsLeft">Rolls left: 3</button>
         <button class="refresh" onclick=switchPlayer()>Switch Player</button>
         <table>
@@ -127,6 +127,139 @@
                 class="scoreBoard"
                 id="sixesPlayer2"
                 onclick="selectSixesPlayer2()"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Three Of a Kind
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="threeOfaKindPlayer1"
+              onclick="threeOfAKindPlayer1()"
+              ></button>
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="threeOfaKindPlayer2"
+              onclick="threeOfAKindPlayer2()"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Four Of a Kind
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="fourOfaKindPlayer1"
+              onclick="fourOfAKindPlayer1()"
+              ></button>
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="fourOfaKindPlayer2"
+              onclick="fourOfAKindPlayer2()"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Full House
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="fullHousePlayer1"
+              onclick="fullHousePlayer1()"
+              ></button>
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="fullHousePlayer2"
+              onclick="fullHousePlayer2()"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Large Straight
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="largeStraightPlayer1"
+              onclick="largeStraightPlayer1()"
+              ></button>
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="largeStraightPlayer2"
+              onclick="largeStraightPlayer2()"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Small Straight
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="smallStraightPlayer1"
+              onclick="smallStraightPlayer1()"
+              ></button>
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="smallStraightPlayer2"
+              onclick="smallStraightPlayer2()"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Yahtzee
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="yahtzeePlayer1"
+              onclick="yahtzeePlayer1()"
+              ></button>
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="yahtzeePlayer2"
+              onclick="yahtzeePlayer2()"
+              ></button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              total
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="totalPlayer1"
+              onclick="totalPlayer1()"
+              ></button>
+            </td>
+            <td>
+              <button
+              class="scoreBoard"
+              id="totalPlayer2"
+              onclick="totalPlayer2()"
               ></button>
             </td>
           </tr>
