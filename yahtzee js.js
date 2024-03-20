@@ -251,7 +251,8 @@ function fullHousePlayer2() {
     }
   }
   if (hasThree && hasTwo) {
-    document.getElementById("fullHousePlayer2").textContent = "Full House!";
+    fullHouseTotalPlayer2 = 25;
+    document.getElementById("fullHousePlayer2").textContent = fullHouseTotalPlayer2;
     return true; // Found a full house
   } else {
     document.getElementById("fullHousePlayer2").textContent = "No Full House";
